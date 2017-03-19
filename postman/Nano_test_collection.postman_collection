@@ -1,0 +1,105 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Nano_test_collection",
+		"_postman_id": "7cedc9fe-220a-3e94-6a25-2e4adf4996ac",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JSON - distance",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/json",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"action\":\"distance\",\n\t\"polygon\": {\n\t\t\"1\": {\n\t\t\t\"x\":10,\n\t\t\t\"y\":10\n\t\t},\n\t\t\"2\": {\n\t\t\t\"x\":20,\n\t\t\t\"y\":20\n\t\t},\n\t\t\"3\": {\n\t\t\t\"x\":20,\n\t\t\t\"y\":10\n\t\t}\n\t},\n\t\"from\":\"1\",\n\t\"to\":\"2\"\n}"
+				},
+				"description": "Дистанция между точками"
+			},
+			"response": []
+		},
+		{
+			"name": "Form-data distance",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/distance/from_1/to_2",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "1",
+							"value": "{\"x\":0,\"y\":0}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "2",
+							"value": "{\"x\":10,\"y\":10}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "3",
+							"value": "{\"x\":0,\"y\":10}",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Form-data perimeter",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/perimeter",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "1",
+							"value": "{\"x\":0,\"y\":0}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "2",
+							"value": "{\"x\":10,\"y\":10}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "3",
+							"value": "{\"x\":0,\"y\":10}",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "JSON - perimeter",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/json",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"action\":\"perimeter\",\n\t\"polygon\": {\n\t\t\"1\": {\n\t\t\t\"x\":10,\n\t\t\t\"y\":10\n\t\t},\n\t\t\"2\": {\n\t\t\t\"x\":20,\n\t\t\t\"y\":20\n\t\t},\n\t\t\"3\": {\n\t\t\t\"x\":20,\n\t\t\t\"y\":10\n\t\t}\n\t},\n\t\"from\":\"1\",\n\t\"to\":\"2\"\n}"
+				},
+				"description": "Периметр"
+			},
+			"response": []
+		}
+	]
+}
